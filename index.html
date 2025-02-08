@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recycling Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <div>
+          <h1>Recycling Assistant</h1>
+          <p>Upload an image to get recycling information and options.</p>
+        </div>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </header>
+
+    <div class="upload-section">
+      <label for="image-upload" class="upload-label">
+        <span>Upload Image</span>
+        <input type="file" id="image-upload" accept="image/*">
+      </label>
+    </div>
+
+    <div class="buttons">
+      <button id="generate-btn">Generate</button>
+      <button id="score-btn">Score</button>
+    </div>
+
+    <div class="results">
+      <div class="score-section">
+        <h2>Recycle Score</h2>
+        <p id="score">0%</p>
+      </div>
+
+      <div class="info-section">
+        <h2>How to Recycle</h2>
+        <p id="recycle-info">Information about recycling will appear here.</p>
+      </div>
+
+      <div class="options-section">
+        <h2>Recycled Image Options</h2>
+        <div id="recycled-images">
+          <!-- Recycled images will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for handling button clicks and image upload
+    document.getElementById('generate-btn').addEventListener('click', () => {
+      alert('Generate button clicked!');
+      // Add logic to generate recycled image options
+    });
+
+    document.getElementById('score-btn').addEventListener('click', () => {
+      alert('Score button clicked!');
+      // Add logic to calculate and display recycle score
+    });
+
+    document.getElementById('image-upload').addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        alert(`Image uploaded: ${file.name}`);
+        // Add logic to process the uploaded image
+      }
+    });
+
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        themeToggle.textContent = '☀️';
+      } else {
+        themeToggle.textContent = '🌙';
+      }
+    });
+  </script>
+</body>
+</html>
