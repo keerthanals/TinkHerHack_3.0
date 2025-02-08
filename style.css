@@ -149,8 +149,6 @@ body {
   /* Results Section */
   .results {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
   }
   
   .card {
@@ -181,13 +179,14 @@ body {
   }
   
   .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
   }
   
   .image-placeholder {
-    aspect-ratio: 1;
     background-color: #F3F4F6;
     border-radius: 0.5rem;
     display: flex;
@@ -196,6 +195,8 @@ body {
     font-size: 0.875rem;
     color: #6B7280;
     transition: background-color 0.3s;
+    width: 240px;
+    height: 240px;
   }
   
   .dark-mode .image-placeholder {
