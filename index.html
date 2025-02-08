@@ -20,68 +20,48 @@
 
     <div class="upload-section">
       <label for="image-upload" class="upload-label">
-        <span>Upload Image</span>
+        <div class="upload-icon">📤</div>
+        <span class="upload-text">Upload Image</span>
         <input type="file" id="image-upload" accept="image/*">
+        <span id="file-name" class="file-name"></span>
       </label>
     </div>
 
     <div class="buttons">
-      <button id="generate-btn">Generate</button>
-      <button id="score-btn">Score</button>
+      <button id="generate-btn" class="btn generate">
+        <span class="icon">⚡</span>
+        Generate
+      </button>
+      <button id="score-btn" class="btn score">
+        <span class="icon">🏆</span>
+        Score
+      </button>
     </div>
 
+
     <div class="results">
-      <div class="score-section">
-        <h2>Recycle Score</h2>
-        <p id="score">0%</p>
+      <div class="card score-section">
+        <h2><span class="icon">🏆</span> Recycle Score</h2>
+        <p id="score" class="score-value">0%</p>
       </div>
 
-      <div class="info-section">
+      <div class="card info-section">
         <h2>How to Recycle</h2>
         <p id="recycle-info">Information about recycling will appear here.</p>
       </div>
 
-      <div class="options-section">
+      <div class="card options-section">
         <h2>Recycled Image Options</h2>
-        <div id="recycled-images">
-          <!-- Recycled images will be dynamically added here -->
+        <div id="recycled-images" class="image-grid">
+          <div class="image-placeholder">Option 1</div>
+          <div class="image-placeholder">Option 2</div>
+          <div class="image-placeholder">Option 3</div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    // JavaScript for handling button clicks and image upload
-    document.getElementById('generate-btn').addEventListener('click', () => {
-      alert('Generate button clicked!');
-      // Add logic to generate recycled image options
-    });
-
-    document.getElementById('score-btn').addEventListener('click', () => {
-      alert('Score button clicked!');
-      // Add logic to calculate and display recycle score
-    });
-
-    document.getElementById('image-upload').addEventListener('change', (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        alert(`Image uploaded: ${file.name}`);
-        // Add logic to process the uploaded image
-      }
-    });
-
-    // Dark Mode Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        themeToggle.textContent = '☀️';
-      } else {
-        themeToggle.textContent = '🌙';
-      }
-    });
+  <script src="script.js">
+    
   </script>
 </body>
 </html>

@@ -80,25 +80,39 @@ body {
   
   /* Upload Section */
   .upload-section {
-    margin: 2rem 0;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border: 2px dashed var(--border-light);
+    border-radius: 0.75rem;
+    background-color: var(--card-light);
+    transition: all 0.3s;
+  }
+  
+  .dark-mode .upload-section {
+    border-color: var(--border-dark);
+    background-color: var(--card-dark);
   }
   
   .upload-label {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #3498db;
-    color: #fff;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
   }
   
-  .upload-label:hover {
-    background-color: #2980b9;
+  .upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
   }
   
-  #image-upload {
+  input[type="file"] {
     display: none;
+  }
+  
+  .file-name {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #6B7280;
   }
   
   /* Buttons */
@@ -134,56 +148,75 @@ body {
   
   /* Results Section */
   .results {
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
   
-  .score-section, .info-section, .options-section {
-    margin-bottom: 2rem;
+  .card {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: var(--card-light);
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
   }
   
-  .score-section h2, .info-section h2, .options-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-    transition: color 0.3s ease;
+  .dark-mode .card {
+    background-color: var(--card-dark);
   }
   
-  body.dark-mode .score-section h2,
-  body.dark-mode .info-section h2,
-  body.dark-mode .options-section h2 {
-    color: #ffffff;
-  }
-  
-  #score {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #27ae60;
-    transition: color 0.3s ease;
-  }
-  
-  body.dark-mode #score {
-    color: #2ecc71;
-  }
-  
-  #recycle-info {
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    transition: color 0.3s ease;
-  }
-  
-  body.dark-mode #recycle-info {
-    color: #b0b0b0;
-  }
-  
-  #recycled-images {
+  .card h2 {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
   
-  #recycled-images img {
-    max-width: 150px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .score-value {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    color: green;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .image-placeholder {
+    aspect-ratio: 1;
+    background-color: #F3F4F6;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: #6B7280;
+    transition: background-color 0.3s;
+  }
+  
+  .dark-mode .image-placeholder {
+    background-color: #374151;
+    color: #9CA3AF;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .buttons {
+      flex-direction: column;
+    }
+  
+    .results {
+      grid-template-columns: 1fr;
+    }
   }

@@ -1,4 +1,4 @@
-// JavaScript for handling button clicks and image upload
+
  // JavaScript for handling button clicks and image upload
  document.getElementById('generate-btn').addEventListener('click', () => {
     alert('Generate button clicked!');
